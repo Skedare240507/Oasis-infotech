@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Your Carbon Footprint Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #bae6fd 100%);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background: radial-gradient(ellipse at center, #7dd3fc 0%, #0ea5e9 100%);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #059669;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #059669, #047857);
+            transform: scale(1.05);
+        }
+
+        .footer-bg {
+            background: #0f172a;
+        }
+
+        img {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-green-600">EcoTrack</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#hero" class="nav-link text-gray-700">Home</a></li>
+                    <li><a href="#features" class="nav-link text-gray-700">Features</a></li>
+                    <li><a href="#about" class="nav-link text-gray-700">About</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-700">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-white space-y-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Track Your Impact, Save Our Planet</h2>
+                <p class="text-lg md:text-xl opacity-90">Discover how EcoTrack simplifies monitoring your carbon
+                    footprint with intuitive tools and real-time insights.</p>
+                <button class="cta-button text-white px-8 py-4 rounded-full font-semibold shadow-lg">Get Started
+                    Now</button>
+            </div>
+            <div class="relative">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6637e9cb-4882-4c27-8c28-672980bc6d4a.png"
+                    alt="Vibrant green landscape with trees, mountains, and a clear blue sky symbolizing environmental preservation and ecological balance"
+                    onerror="this.style.display='none';" class="w-full h-auto" />
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <a href="#features" class="text-white text-4xl animate-bounce">&downarrow;</a>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Why Choose EcoTrack?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3eb3240d-99bf-41da-b37a-2d540a2618ca.png"
+                            alt="Icon representing data tracking: a bar chart with upward green arrows indicating progress and monitoring"
+                            onerror="this.style.display='none';" class="mx-auto w-24 h-24" />
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Real-Time Tracking</h4>
+                    <p>Monitor your daily carbon emissions with instant updates and easy-to-read dashboards.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1adbfc1c-0074-4704-8a02-80512f063a90.png"
+                            alt="Icon representing insights: a lightbulb with gears, symbolizing tips and advice for reducing environmental impact"
+                            onerror="this.style.display='none';" class="mx-auto w-24 h-24" />
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Actionable Insights</h4>
+                    <p>Get personalized tips on how to reduce your footprint and make sustainable choices.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dfe5df83-3309-47c7-b087-31e61c4a05e4.png"
+                            alt="Icon representing community: people icons connected by lines, showing global collaboration for environmental efforts"
+                            onerror="this.style.display='none';" class="mx-auto w-24 h-24" />
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Community Driven</h4>
+                    <p>Connect with others, share achievements, and join challenges to amplify your impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 text-gray-800">Our Mission</h3>
+                <p class="text-lg text-gray-600 mb-4">At EcoTrack, we believe small actions lead to big changes. Our app
+                    empowers individuals to understand and minimize their environmental impact, fostering a sustainable
+                    future for generations to come.</p>
+                <p class="text-gray-600">Built with user-friendly design and backed by science, EcoTrack is your
+                    companion in the journey towards a greener planet.</p>
+            </div>
+            <div>
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c443feca-4b04-40e1-a9f9-c908e04d608a.png"
+                    alt="Diverse group of people outdoors in a park, smiling and interacting with devices, representing community and environmental awareness"
+                    onerror="this.style.display='none';" class="w-full h-auto" />
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer-bg py-12 text-white">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-semibold mb-4">EcoTrack</h4>
+                <p>Empowering you to make a difference every day.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                <p>Email: support@ecotrack.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="text-center mt-8 border-t border-gray-700 pt-4">
+            <p>© 2023 EcoTrack. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Simple CTA button alert (placeholder for future interaction)
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            alert('Welcome to EcoTrack! Stay tuned for the app launch.');
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</createfile>

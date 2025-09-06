@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Tribute to Babasaheb Ambedkar</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p, button {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3rem;
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-weight: normal;
+      font-style: italic;
+      color: #555;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .image-container img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(11, 61, 145, 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      background-color: #ffffffcc;
+      padding: 20px 30px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    section p {
+      margin-bottom: 1.2em;
+      font-size: 1.1rem;
+    }
+
+    button {
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px 5px;
+    }
+
+    button:hover {
+      background-color: #083670;
+    }
+
+    .interactive-section {
+      margin-top: 20px;
+    }
+
+    .fact-list, .quote-display {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border-left: 5px solid #0b3d91;
+    }
+
+    #opinion-output {
+      margin-top: 20px;
+      font-style: italic;
+      color: #0b3d91;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .image-container img {
+        max-width: 90%;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Hidden elements for interactivity */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dr. Bhimrao Ramji Ambedkar</h1>
+    <h2>The Architect of Modern India</h2>
+  </header>
+
+  <div class="image-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/B._R._Ambedkar_Statue_in_Mumbai.jpg/440px-B._R._Ambedkar_Statue_in_Mumbai.jpg" alt="Statue of Dr. Babasaheb Ambedkar in Mumbai, depicting a dignified man in formal attire" />
+  </div>
+
+  <section>
+    <p>
+      I deeply admire Dr. Babasaheb Ambedkar for his unwavering commitment to social justice and equality. As the principal architect of the Indian Constitution, he laid the foundation for a democratic and inclusive India where every citizen has rights and dignity.
+    </p>
+    <p>
+      His relentless fight against caste discrimination and his vision for education as a tool for empowerment inspire millions. Ambedkar's courage to challenge social norms and his dedication to uplift the marginalized communities reflect his extraordinary leadership and compassion.
+    </p>
+    <p>
+      Beyond his political achievements, I adore his scholarly brilliance and his ability to blend knowledge with activism. His legacy continues to motivate us to strive for a fairer society where freedom, equality, and fraternity prevail.
+    </p>
+  </section>
+
+  <section class="interactive-section">
+    <button id="show-facts">Show Key Facts</button>
+    <button id="hide-facts" class="hidden">Hide Key Facts</button>
+    <div id="facts-section" class="hidden fact-list">
+      <h3>Key Facts about Babasaheb Ambedkar:</h3>
+      <ul>
+        <li>Born in 1891 in a Dalit family, he overcame immense social barriers.</li>
+        <li>He earned multiple doctorates from Columbia University and the London School of Economics.</li>
+        <li>As Chairman of the Constitution Drafting Committee, he ensured protections for minorities and the oppressed.</li>
+        <li>He led mass conversions to Buddhism in 1956 to escape caste-based discrimination.</li>
+        <li>His life is a testament to resilience and intellectual brilliance.</li>
+      </ul>
+    </div>
+
+    <button id="show-quote">Random Quote</button>
+    <button id="hide-quote" class="hidden">Hide Quote</button>
+    <div id="quote-section" class="hidden quote-display">
+      <p id="quote-text">"Cultivation of mind should be the ultimate aim of human existence."</p>
+    </div>
+  </section>
+
+  <section class="interactive-section">
+    <h3>Share What You Admire</h3>
+    <textarea id="user-opinion" placeholder="Write a short note about what you admire in Babasaheb Ambedkar..." style="width: 100%; height: 80px; margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+    <button id="submit-opinion">Submit Opinion</button>
+    <div id="opinion-output"></div>
+  </section>
+
+  <footer>
+    &copy; 2024 Interactive Tribute Page | Created with ❤️ for Babasaheb Ambedkar
+  </footer>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function() {
+      // Facts section toggle
+      const showFactsBtn = document.getElementById('show-facts');
+      const hideFactsBtn = document.getElementById('hide-facts');
+      const factsSection = document.getElementById('facts-section');
+
+      showFactsBtn.addEventListener('click', function() {
+        factsSection.classList.remove('hidden');
+        showFactsBtn.classList.add('hidden');
+        hideFactsBtn.classList.remove('hidden');
+      });
+
+      hideFactsBtn.addEventListener('click', function() {
+        factsSection.classList.add('hidden');
+        hideFactsBtn.classList.add('hidden');
+        showFactsBtn.classList.remove('hidden');
+      });
+
+      // Quote section toggle
+      const showQuoteBtn = document.getElementById('show-quote');
+      const hideQuoteBtn = document.getElementById('hide-quote');
+      const quoteSection = document.getElementById('quote-section');
+      const quoteText = document.getElementById('quote-text');
+
+      const quotes = [
+        "Cultivation of mind should be the ultimate aim of human existence.",
+        "History shows that where ethics and economics come in conflict, victory is always with economics.",
+        "Independence worth having is independence worth fighting for and defending and therefore the fight for freedom will never cease.",
+        "Law and order are the medicine of the body politic and when the body politic gets sick, medicine must be applied."
+      ];
+
+      showQuoteBtn.addEventListener('click', function() {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteText.textContent = randomQuote;
+        quoteSection.classList.remove('hidden');
+        showQuoteBtn.classList.add('hidden');
+        hideQuoteBtn.classList.remove('hidden');
+      });
+
+      hideQuoteBtn.addEventListener('click', function() {
+        quoteSection.classList.add('hidden');
+        hideQuoteBtn.classList.add('hidden');
+        showQuoteBtn.classList.remove('hidden');
+      });
+
+      // User opinion submission
+      const submitBtn = document.getElementById('submit-opinion');
+      const userOpinion = document.getElementById('user-opinion');
+      const opinionOutput = document.getElementById('opinion-output');
+
+      submitBtn.addEventListener('click', function() {
+        const opinion = userOpinion.value.trim();
+        if (opinion) {
+          opinionOutput.textContent = "Thank you for sharing: \"" + opinion + "\"";
+          userOpinion.value = "";
+        } else {
+          opinionOutput.textContent = "Please enter an opinion before submitting.";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+</content>
+</create_file>
